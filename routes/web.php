@@ -24,4 +24,5 @@ Route::prefix('books')->group(function () {
     Route::get('/edit/{id}', [BookController::class,'edit'])->name('books.edit');
     Route::put('/update/{id}', [BookController::class,'update'])->name('books.update');
     Route::delete('/delete/{id}', [BookController::class,'delete'])->name('books.delete');
+    Route::get('books/search', [BookController::class, 'search'])->name('books.search');
 });

@@ -8,8 +8,20 @@ use Illuminate\Support\Facades\Log;
 class BookController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
+        $key = $request->key??'';
+        $query = Book::query(true);
+        if ($key) {
+            $query->orWhere('id', $key);
+            $query->orWhere('name', 'LIKE', '%' . $key . '%');
+
+        }
+        $books = $query->orderBy('id', 'DESC')->paginate(2);
+        $params = [
+            'f_key'          => $key,
+            'books' =>$books
+        ];
         $books = Book::paginate(2);
         return view('books.index',compact('books'));
     }
@@ -85,5 +97,14 @@ class BookController extends Controller
             Log::error($e->getMessage());
             return redirect()->route('books.index')->with('status1', 'xóa thất bại');
         }
+    }
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        if (!$search) {
+            return redirect()->route('books.index');
+        }
+        $categories = Book::where('name', 'LIKE', '%' . $search . '%')->paginate(5);
+        return view('books.index', compact('books'));
     }
 }
