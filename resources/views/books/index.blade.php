@@ -33,8 +33,8 @@
                 <th colspan="2">id</th>
                 <th colspan="2">Tên sách</th>
                 <th colspan="2">Mã sách</th>
-                <th colspan="2">Loại sách</th>
                 <th colspan="2">Tác giả</th>
+                <th colspan="2">Loại sách</th>
                 <th colspan="2">Số trang</th>
                 <th colspan="2">Năm sản xuất</th>
                 <th colspan="2">Hoạt động</th>

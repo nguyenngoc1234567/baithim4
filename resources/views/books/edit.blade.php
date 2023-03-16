@@ -30,19 +30,18 @@
 
         <div class="mb-3">
             <label class="form-label">tacgia</label>
-            <input type="text" name="tacgia" value="{{ $books->tacgia }}" class="form-control">
-        </div>
-        <div class="mb-3">
-            <select name="author" id="">
-                <option name="author">Hồ Chí Minh </option>
-            <option name="author">Dương Thụy</option>
-            <option name="author">Ngọc Nguyễn </option>
+            {{-- <input type="text" name="tacgia" value="{{ $books->tacgia }}" class="form-control"> --}}
+            <select name="tacgia" id="">
+                <option name="tacgia">Hồ Chí Minh </option>
+            <option name="tacgia">Dương Thụy</option>
+            <option name="tacgia">Ngọc Nguyễn </option>
             </select>
         </div>
         <div class="mb-3">
             <label class="form-label">theloai</label>
             <input type="text" name="theloai" value="{{ $books->theloai }}" class="form-control">
         </div>
+
 
         <div class="mb-3">
             <label class="form-label">sotrang</label>
