@@ -31,10 +31,17 @@
         <div class="mb-3">
             <label class="form-label">tacgia</label>
             {{-- <input type="text" name="tacgia" value="{{ $books->tacgia }}" class="form-control"> --}}
-            <select name="tacgia" id="">
+            {{-- <select name="tacgia" id="">
                 <option name="tacgia">Hồ Chí Minh </option>
             <option name="tacgia">Dương Thụy</option>
             <option name="tacgia">Ngọc Nguyễn </option>
+            </select> --}}
+            <select name="tacgia" class="form-control">
+                <option value="{{ $books->tacgia }}">
+                    {{ $books->tacgia }}</option>
+                <option value="Hồ Chí Minh ">Hồ Chí Minh </option>
+                <option name="Dương Thụy">Dương Thụy</option>
+            <option name="Ngọc Nguyễn">Ngọc Nguyễn </option>
             </select>
         </div>
         <div class="mb-3">

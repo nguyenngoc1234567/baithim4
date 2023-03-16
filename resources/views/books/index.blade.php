@@ -64,6 +64,6 @@
         </tbody>
     </table>
 </body>
-{{-- {{ $books->onEachSide(3)->links() }} --}}
+{{ $books->links() }}
 
 </html>
