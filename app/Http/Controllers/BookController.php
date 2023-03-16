@@ -11,17 +11,16 @@ class BookController extends Controller
     public function index(Request $request)
     {
         $key = $request->key??'';
-        $query = Book::query(true);
-        if ($key) {
-            $query->orWhere('id', $key);
-            $query->orWhere('name', 'LIKE', '%' . $key . '%');
-
-        }
-        $books = $query->orderBy('id', 'DESC')->paginate(2);
-        $params = [
-            'f_key'          => $key,
-            'books' =>$books
-        ];
+        // $query = Book::query(true);
+        // if ($key) {
+        //     $query->orWhere('id', $key);
+        //     $query->orWhere('name', 'LIKE', '%' . $key . '%');
+        // }
+        // $books = $query->orderBy('id', 'DESC')->paginate(2);
+        // $params = [
+        //     'f_key'          => $key,
+        //     'books' =>$books
+        // ];
         $books = Book::paginate(2);
         return view('books.index',compact('books'));
     }
